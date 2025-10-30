@@ -1,5 +1,8 @@
 package edu.pe.cibertec.sgventasropa.data.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Venta(
     val id: String = "",
     val clienteId: String = "",

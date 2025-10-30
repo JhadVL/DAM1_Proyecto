@@ -28,9 +28,11 @@ class CarritoViewModel : ViewModel() {
         persist(context)
     }
 
-    fun limpiar(context: Context? = null) {
-        _items.value = emptyList()
-        persist(context)
+    fun limpiar(context: Context) {
+        viewModelScope.launch {
+            persist(context)
+            _items.value = emptyList()
+        }
     }
 
     fun cargarDesdeLocal(context: Context) {
@@ -46,13 +48,14 @@ class CarritoViewModel : ViewModel() {
     }
 
     private fun persist(context: Context?) {
-        context?.let { ctx ->
+        context?.applicationContext?.let { ctx ->   // 🔹 asegura un contexto válido
             viewModelScope.launch {
                 val json = Json.encodeToString(_items.value)
                 CartDataStore.saveCart(ctx, json)
             }
         }
     }
+
     fun agregarConVerificacion(
         item: ItemVenta,
         onResult: (success: Boolean, message: String) -> Unit
