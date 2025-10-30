@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819062292607",
+    "project_id": "sgventasropa",
+    "storage_bucket": "sgventasropa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819062292607:android:2fc7192cb8c789101c7f4a",
+        "android_client_info": {
+          "package_name": "edu.pe.cibertec.sgventasropa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSbFeYvhz6BWalljhVMkMGe4BZAC6E-a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
