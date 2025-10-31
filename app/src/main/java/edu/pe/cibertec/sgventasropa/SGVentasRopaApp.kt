@@ -14,7 +14,7 @@ fun SGVentasRopaApp() {
     val navController = rememberNavController()
     val context = LocalContext.current
 
-    // 🔹 Crear UNA SOLA instancia del CarritoViewModel (compartido)
+    //Crear una sola instancia del CarritoViewModel
     val carritoVM: CarritoViewModel = viewModel()
 
     NavHost(navController = navController, startDestination = Screen.Inicio.route) {
@@ -48,7 +48,7 @@ fun SGVentasRopaApp() {
             RegistroClienteScreen(onRegistered = { navController.navigate(Screen.Productos.route) })
         }
 
-        // 🔹 Pasamos carritoVM al ProductosScreen
+        //Pasamos carritoVM al ProductosScreen
         composable(Screen.Productos.route) {
             ProductosScreen(
                 navController = navController,
@@ -57,7 +57,7 @@ fun SGVentasRopaApp() {
             )
         }
 
-        // 🔹 Productos para administrador
+        //Productos para administrador
         composable("productos_admin") {
             ProductosScreen(
                 navController = navController,
@@ -70,7 +70,7 @@ fun SGVentasRopaApp() {
             AdminScreen(navController = navController, context = context)
         }
 
-        // 🔹 Pasamos carritoVM al CarritoScreen
+        //Pasamos carritoVM al CarritoScreen
         composable(Screen.Carrito.route) {
             CarritoScreen(carritoVM = carritoVM)
         }

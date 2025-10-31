@@ -51,7 +51,7 @@ fun CarritoScreen(
                         ventaVM.realizarVenta(usuarioUid, items, total,
                             onSuccess = { ventaId ->
                                 Toast.makeText(context, "Compra realizada (ID: $ventaId)", Toast.LENGTH_LONG).show()
-                                carritoVM.limpiar(context.applicationContext) // 🔹 usa applicationContext seguro
+                                carritoVM.limpiar(context.applicationContext)
                             },
                             onError = { msg ->
                                 Toast.makeText(context, "Error: $msg", Toast.LENGTH_LONG).show()

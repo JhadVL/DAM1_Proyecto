@@ -4,6 +4,6 @@ data class Usuario(
     val uid: String = "",
     val nombre: String = "",
     val email: String = "",
-    val rol: String = "cliente", // "admin" o "cliente"
+    val rol: String = "cliente",
     val fechaRegistroMillis: Long = System.currentTimeMillis()
 )

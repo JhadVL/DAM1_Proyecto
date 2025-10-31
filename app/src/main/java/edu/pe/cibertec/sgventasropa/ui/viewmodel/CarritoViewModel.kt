@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class CarritoViewModel : ViewModel() {
@@ -48,7 +47,7 @@ class CarritoViewModel : ViewModel() {
     }
 
     private fun persist(context: Context?) {
-        context?.applicationContext?.let { ctx ->   // 🔹 asegura un contexto válido
+        context?.applicationContext?.let { ctx ->
             viewModelScope.launch {
                 val json = Json.encodeToString(_items.value)
                 CartDataStore.saveCart(ctx, json)
@@ -79,7 +78,5 @@ class CarritoViewModel : ViewModel() {
             }
         }
     }
-
-
 
 }

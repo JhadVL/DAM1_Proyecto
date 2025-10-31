@@ -40,6 +40,7 @@ fun ProductosScreen(
 
         // Botón Agregar solo para admin
         if (isAdmin) {
+            Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = {
                     editarProducto = null
@@ -47,11 +48,13 @@ fun ProductosScreen(
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
+
                 Text("Agregar Producto")
             }
             Spacer(modifier = Modifier.height(8.dp))
         } else {
             // Botón "Ver Carrito" solo para clientes
+            Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = { navController?.navigate(Screen.Carrito.route) },
                 modifier = Modifier.fillMaxWidth()
